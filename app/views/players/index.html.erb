@@ -1,0 +1,47 @@
+<h1>Listing players with 2012 Forecast Data</h1>
+
+<table>
+  <tr>
+		<th>Rank</th>
+    <th class="player_name">Player name</th>
+    <th class="name">Owner name</th>
+    <th>FG%</th>
+    <th>FT%</th>
+    <th>3PM</th>
+    <th>Reb</th>
+    <th>Ast</th>
+    <th>Stl</th>
+    <th>Blk</th>
+    <th>To</th>
+    <th>Pts</th>
+		<th>Rank</th>
+    <th></th> 
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @players.each do |player| %>
+  <tr>
+		<td><%= player.id %></td>
+    <td class="player_name"><%= player.player_name %></td>
+    <td class="name"><%= player.owner_name %></td>
+    <td><%= player.fg_percentage %></td>
+    <td><%= player.ft_percentage %></td>
+    <td><%= player.three_pts %></td>
+    <td><%= player.reb %></td>
+    <td><%= player.ast %></td>
+    <td><%= player.stl %></td>
+    <td><%= player.blk %></td>
+    <td><%= player.to %></td>
+    <td><%= number_with_delimiter(player.pts) %></td>
+		<td><%= player.rank %></td>
+    <td><%= link_to 'Show', player %></td>
+    <td><%= link_to 'Edit', edit_player_path(player) %></td>
+    <td><%= link_to 'Destroy', player, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Player', new_player_path %>

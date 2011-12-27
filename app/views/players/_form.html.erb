@@ -1,0 +1,61 @@
+<%= form_for(@player) do |f| %>
+  <% if @player.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@player.errors.count, "error") %> prohibited this player from being saved:</h2>
+
+      <ul>
+      <% @player.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :player_name %><br />
+    <%= f.text_field :player_name %>
+  </div>
+  <div class="field">
+    <%= f.label :owner_name %><br />
+    <%= f.text_field :owner_name %>
+  </div>
+  <div class="field">
+    <%= f.label :fg_percentage %><br />
+    <%= f.text_field :fg_percentage %>
+  </div>
+  <div class="field">
+    <%= f.label :ft_percentage %><br />
+    <%= f.text_field :ft_percentage %>
+  </div>
+  <div class="field">
+    <%= f.label :three_pts %><br />
+    <%= f.number_field :three_pts %>
+  </div>
+  <div class="field">
+    <%= f.label :reb %><br />
+    <%= f.text_field :reb %>
+  </div>
+  <div class="field">
+    <%= f.label :ast %><br />
+    <%= f.number_field :ast %>
+  </div>
+  <div class="field">
+    <%= f.label :stl %><br />
+    <%= f.number_field :stl %>
+  </div>
+  <div class="field">
+    <%= f.label :blk %><br />
+    <%= f.number_field :blk %>
+  </div>
+  <div class="field">
+    <%= f.label :to %><br />
+    <%= f.number_field :to %>
+  </div>
+  <div class="field">
+    <%= f.label :pts %><br />
+    <%= f.text_field :pts %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

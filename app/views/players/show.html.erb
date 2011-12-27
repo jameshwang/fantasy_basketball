@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Player name:</b>
+  <%= @player.player_name %>
+</p>
+
+<p>
+  <b>Owner name:</b>
+  <%= @player.owner_name %>
+</p>
+
+<p>
+  <b>Fg percentage:</b>
+  <%= @player.fg_percentage %>
+</p>
+
+<p>
+  <b>Ft percentage:</b>
+  <%= @player.ft_percentage %>
+</p>
+
+<p>
+  <b>Three pts:</b>
+  <%= @player.three_pts %>
+</p>
+
+<p>
+  <b>Reb:</b>
+  <%= @player.reb %>
+</p>
+
+<p>
+  <b>Ast:</b>
+  <%= @player.ast %>
+</p>
+
+<p>
+  <b>Stl:</b>
+  <%= @player.stl %>
+</p>
+
+<p>
+  <b>Blk:</b>
+  <%= @player.blk %>
+</p>
+
+<p>
+  <b>To:</b>
+  <%= @player.to %>
+</p>
+
+<p>
+  <b>Pts:</b>
+  <%= @player.pts %>
+</p>
+
+
+<%= link_to 'Edit', edit_player_path(@player) %> |
+<%= link_to 'Back', players_path %>
