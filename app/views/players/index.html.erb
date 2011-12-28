@@ -34,7 +34,7 @@
     <td><%= player.blk %></td>
     <td><%= player.to %></td>
     <td><%= number_with_delimiter(player.pts) %></td>
-		<td><%= player.rank %></td>
+		<td><%= (player.rank*100).round / 100.0 %></td>
     <td><%= link_to 'Show', player %></td>
     <td><%= link_to 'Edit', edit_player_path(player) %></td>
     <td><%= link_to 'Destroy', player, :confirm => 'Are you sure?', :method => :delete %></td>

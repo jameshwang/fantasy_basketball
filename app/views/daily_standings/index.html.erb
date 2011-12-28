@@ -1,0 +1,39 @@
+<h1>Listing Daily Standing</h1>
+
+<table>
+  <tr>
+		<th>Rank</th>
+    <th class="dailyStanding_name">Team</th>
+    <th>FG%</th>
+    <th>FT%</th>
+    <th>3PM</th>
+    <th>Reb</th>
+    <th>Ast</th>
+    <th>Stl</th>
+    <th>Blk</th>
+    <th>To</th>
+    <th>Pts</th>
+		<th>Games Played</th>
+		<th>Moves</th>
+  </tr>
+<% @dailyStandings = DailyStanding.find(:all, :order => "rk") %>
+<% @dailyStandings.each do |dailyStanding| %>
+  <tr>
+		<td><%= dailyStanding.rk %></td>
+    <td class="name"><%= dailyStanding.team %></td>
+    <td><%= dailyStanding.fg %></td>
+    <td><%= dailyStanding.ft %></td>
+    <td><%= (dailyStanding.three_pm*100).round / 100.00 %></td>
+    <td><%= (dailyStanding.reb*100).round / 100.00 %></td>
+    <td><%= (dailyStanding.ast*100).round / 100.00 %></td>
+    <td><%= (dailyStanding.stl*100).round / 100.00 %></td>
+    <td><%= (dailyStanding.blk*100).round / 100.00 %></td>
+    <td><%= (dailyStanding.to*100).round / 100.00 %></td>
+    <td><%= (dailyStanding.pts*100).round / 100.00 %></td>
+		<td><%= dailyStanding.gp %></td>
+		<td><%= dailyStanding.move %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

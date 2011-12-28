@@ -10,7 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111226200123) do
+ActiveRecord::Schema.define(:version => 20111228034622) do
+
+  create_table "daily_standings", :force => true do |t|
+    t.integer  "rk"
+    t.string   "team"
+    t.float    "fg"
+    t.float    "ft"
+    t.float    "three_pm"
+    t.float    "reb"
+    t.float    "ast"
+    t.float    "stl"
+    t.float    "blk"
+    t.float    "to"
+    t.float    "pts"
+    t.integer  "gp"
+    t.integer  "move"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "players", :force => true do |t|
     t.string   "player_name"
@@ -26,7 +44,7 @@ ActiveRecord::Schema.define(:version => 20111226200123) do
     t.integer  "pts"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "rank"
+    t.float    "rank"
   end
 
 end
