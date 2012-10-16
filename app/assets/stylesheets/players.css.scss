@@ -1,6 +1,9 @@
 // Place all the styles related to the Players controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+	background-color: #F2F2E8;
+}
 table {
 	border-collapse: collapse;
 }
@@ -24,4 +27,8 @@ th.player_name, td.player_name {
 
 td.name, td.player_name {
 	text-align: left;
+}
+
+tr:nth-child(odd) {
+	background-color: #F2F2E8;
 }

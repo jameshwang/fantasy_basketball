@@ -1,0 +1,65 @@
+<%= form_for(@daily_ranking) do |f| %>
+  <% if @daily_ranking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daily_ranking.errors.count, "error") %> prohibited this daily_ranking from being saved:</h2>
+
+      <ul>
+      <% @daily_ranking.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rank %><br />
+    <%= f.number_field :rank %>
+  </div>
+  <div class="field">
+    <%= f.label :team %><br />
+    <%= f.text_field :team %>
+  </div>
+  <div class="field">
+    <%= f.label :fg %><br />
+    <%= f.number_field :fg %>
+  </div>
+  <div class="field">
+    <%= f.label :ft %><br />
+    <%= f.number_field :ft %>
+  </div>
+  <div class="field">
+    <%= f.label :three_pm %><br />
+    <%= f.number_field :three_pm %>
+  </div>
+  <div class="field">
+    <%= f.label :reb %><br />
+    <%= f.number_field :reb %>
+  </div>
+  <div class="field">
+    <%= f.label :ast %><br />
+    <%= f.number_field :ast %>
+  </div>
+  <div class="field">
+    <%= f.label :stl %><br />
+    <%= f.number_field :stl %>
+  </div>
+  <div class="field">
+    <%= f.label :blk %><br />
+    <%= f.number_field :blk %>
+  </div>
+  <div class="field">
+    <%= f.label :to %><br />
+    <%= f.number_field :to %>
+  </div>
+  <div class="field">
+    <%= f.label :pts %><br />
+    <%= f.number_field :pts %>
+  </div>
+  <div class="field">
+    <%= f.label :tot_points %><br />
+    <%= f.number_field :tot_points %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

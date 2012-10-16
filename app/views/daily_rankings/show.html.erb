@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Rank:</b>
+  <%= @daily_ranking.rank %>
+</p>
+
+<p>
+  <b>Team:</b>
+  <%= @daily_ranking.team %>
+</p>
+
+<p>
+  <b>Fg:</b>
+  <%= @daily_ranking.fg %>
+</p>
+
+<p>
+  <b>Ft:</b>
+  <%= @daily_ranking.ft %>
+</p>
+
+<p>
+  <b>Three pm:</b>
+  <%= @daily_ranking.three_pm %>
+</p>
+
+<p>
+  <b>Reb:</b>
+  <%= @daily_ranking.reb %>
+</p>
+
+<p>
+  <b>Ast:</b>
+  <%= @daily_ranking.ast %>
+</p>
+
+<p>
+  <b>Stl:</b>
+  <%= @daily_ranking.stl %>
+</p>
+
+<p>
+  <b>Blk:</b>
+  <%= @daily_ranking.blk %>
+</p>
+
+<p>
+  <b>To:</b>
+  <%= @daily_ranking.to %>
+</p>
+
+<p>
+  <b>Pts:</b>
+  <%= @daily_ranking.pts %>
+</p>
+
+<p>
+  <b>Tot points:</b>
+  <%= @daily_ranking.tot_points %>
+</p>
+
+
+<%= link_to 'Edit', edit_daily_ranking_path(@daily_ranking) %> |
+<%= link_to 'Back', daily_rankings_path %>

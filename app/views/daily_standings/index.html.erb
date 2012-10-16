@@ -1,5 +1,14 @@
-<h1>Listing Daily Standing</h1>
 
+<header>
+	Listing Daily Standing
+</header>
+<nav>
+	<ul>
+		<li>Home</li>
+		<li>Players</li>
+		<li>Daily Standings</li>
+	</ul>
+</nav>
 <table>
   <tr>
 		<th>Rank</th>
@@ -35,5 +44,83 @@
   </tr>
 <% end %>
 </table>
+<!-- Inserting averages and standard dev -->
+<br />
+<table>
+  <tr>
+		<th>Rank</th>
+    <th class="dailyStanding_name">R</th>
+    <th>FG%</th>
+    <th>FT%</th>
+    <th>3PM</th>
+    <th>Reb</th>
+    <th>Ast</th>
+    <th>Stl</th>
+    <th>Blk</th>
+    <th>To</th>
+    <th>Pts</th>
+  </tr>
+  <tr>
+		<td></td>
+    <td class="name">Average</td>
+    <td><%= (@fg_avg*10000).round / 10000.00 %></td>
+    <td><%= (@ft_avg*10000).round / 10000.00 %></td>
+    <td><%= (@three_avg*100).round / 100.00 %></td>
+    <td><%= (@reb_avg*100).round / 100.00 %></td>
+    <td><%= (@ast_avg*100).round / 100.00 %></td>
+    <td><%= (@stl_avg*100).round / 100.00 %></td>
+    <td><%= (@blk_avg*100).round / 100.00 %></td>
+    <td><%= (@to_avg*100).round / 100.00 %></td>
+    <td><%= (@pts_avg*100).round / 100.00 %></td>
+  </tr>
+	<tr>
+		<td></td>
+		<td class="name">Standard Dev</td>
+		<td><%= @fg_stdev %></td>
+		<td><%= @ft_stdev %></td>
+    <td><%= @three_stdev %></td>
+    <td><%= @reb_stdev %></td>
+    <td><%= @ast_stdev %></td>
+    <td><%= @stl_stdev %></td>
+    <td><%= @blk_stdev %></td>
+    <td><%= @to_stdev %></td>
+    <td><%= @pts_stdev %></td>
+	</tr>
+</table>
 
 <br />
+<!-- This is the second table.  This will house the modified ranking -->
+<table>
+  <tr>
+    <th>Rank</th>
+    <th>Team</th>
+    <th>Fg</th>
+    <th>Ft</th>
+    <th>Three pm</th>
+    <th>Reb</th>
+    <th>Ast</th>
+    <th>Stl</th>
+    <th>Blk</th>
+    <th>To</th>
+    <th>Pts</th>
+    <th>Tot points</th>
+  </tr>
+<% @daily_rankings = DailyRanking.find(:all, :order => "rank") %>
+<% @daily_rankings.each do |daily_ranking| %>
+  <tr>
+    <td><%= daily_ranking.rank %></td>
+    <td><%= daily_ranking.team %></td>
+    <td><%= daily_ranking.fg %></td>
+    <td><%= daily_ranking.ft %></td>
+    <td><%= daily_ranking.three_pm %></td>
+    <td><%= daily_ranking.reb %></td>
+    <td><%= daily_ranking.ast %></td>
+    <td><%= daily_ranking.stl %></td>
+    <td><%= daily_ranking.blk %></td>
+    <td><%= daily_ranking.to %></td>
+    <td><%= daily_ranking.pts %></td>
+    <td><%= daily_ranking.tot_points %></td>
+  </tr>
+<% end %>
+</table>
+

@@ -1,4 +1,6 @@
 FantasyBb::Application.routes.draw do
+  resources :daily_rankings
+
   resources :players
   resources :daily_standings
   # The priority is based upon order of creation:

@@ -10,7 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111228034622) do
+ActiveRecord::Schema.define(:version => 20111228052628) do
+
+  create_table "daily_rankings", :force => true do |t|
+    t.integer  "rank"
+    t.string   "team"
+    t.float    "fg"
+    t.float    "ft"
+    t.float    "three_pm"
+    t.float    "reb"
+    t.float    "ast"
+    t.float    "stl"
+    t.float    "blk"
+    t.float    "to"
+    t.float    "pts"
+    t.float    "tot_points"
+    t.boolean  "ignore_flag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "daily_standings", :force => true do |t|
     t.integer  "rk"

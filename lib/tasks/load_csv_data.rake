@@ -58,36 +58,36 @@ namespace :db do
   
   desc "assign ranking for each player"
   task :assign_ranking => :environment do
-    fg_percentage_avg = 0.4796
-    fg_percentage_std = 0.0059
-    ft_percentage_avg = 0.7878
-    ft_percentage_std = 0.0188
-    three_pts_avg = 467.9 / 9
-    three_pts_std = 89.0 / 9
-    reb_avg = 3506.1 / 9
-    reb_std = 184.7 / 9
-    ast_avg = 2029.0 / 9
-    ast_std = 249.4 / 9
-    stl_avg = 610.4 / 9
-    stl_std = 68.3 / 9
-    blk_avg = 416.9 / 9
-    blk_std = 96.2 / 9
-    to_avg = 1189.4 / 9
-    to_std = 57.9 / 9
-    pts_avg = 9385.2 / 9
-    pts_std = 595.0 / 9
+    fg_percentage_avg = 0.4452
+    fg_percentage_std = 0.0301
+    ft_percentage_avg = 0.7499
+    ft_percentage_std = 0.0535
+    three_pts_avg = 0.8
+    three_pts_std = 0.3
+    reb_avg = 5.61
+    reb_std = 0.41
+    ast_avg = 3.11
+    ast_std = 0.63
+    stl_avg = 1.03
+    stl_std = 0.13
+    blk_avg = 0.71
+    blk_std = 0.22
+    to_avg = 2.18
+    to_std = 0.36
+    pts_avg = 14.58
+    pts_std = 2.25
     
     
     Player.all.each do |p|
       p.rank = (p.fg_percentage - fg_percentage_avg)/fg_percentage_std +
                (p.ft_percentage - ft_percentage_avg)/ft_percentage_std +
-               (p.three_pts - three_pts_avg)/three_pts_std +
-               (p.reb - reb_avg)/reb_std +
-               (p.ast - ast_avg)/ast_std +
-               (p.stl - stl_avg)/stl_std +
-               (p.blk - blk_avg)/blk_std -
-               (p.to - to_avg)/to_std +
-               (p.pts - pts_avg)/pts_std
+               (p.three_pts/66 - three_pts_avg)/three_pts_std +
+               (p.reb/66 - reb_avg)/reb_std +
+               (p.ast/66 - ast_avg)/ast_std +
+               (p.stl/66 - stl_avg)/stl_std +
+               (p.blk/66 - blk_avg)/blk_std -
+               (p.to/66 - to_avg)/to_std +
+               (p.pts/66 - pts_avg)/pts_std
       p.save
     end
   end

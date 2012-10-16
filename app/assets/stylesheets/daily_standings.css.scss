@@ -2,11 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 {
+header {
 	background-color: #BA4F00;
-	height: 2em;
-	text-align: left;
-	vertical-align: middle;
 }
 
 table {
@@ -15,4 +12,16 @@ table {
 
 th {
 	background-color: #EEC49A;
+}
+
+nav {
+  background-color: #BA4F00;
+	padding: 5px 0px;
+}
+
+nav li {
+	display: inline-block;
+	list-style: none;
+	padding: 0px 30px;
+	
 }

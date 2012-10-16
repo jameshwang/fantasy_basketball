@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  rank: 1
+  team: MyString
+  fg: 1
+  ft: 1
+  three_pm: 1
+  reb: 1
+  ast: 1
+  stl: 1
+  blk: 1
+  to: 1
+  pts: 1
+  tot_points: 1
+
+two:
+  rank: 1
+  team: MyString
+  fg: 1
+  ft: 1
+  three_pm: 1
+  reb: 1
+  ast: 1
+  stl: 1
+  blk: 1
+  to: 1
+  pts: 1
+  tot_points: 1

@@ -1,4 +1,7 @@
-<h1>Listing players with 2012 Forecast Data</h1>
+<header>
+	<h1>Listing players with 2012 Forecast Data</h1>
+</header>
+
 
 <table>
   <tr>
@@ -15,11 +18,8 @@
     <th>To</th>
     <th>Pts</th>
 		<th>Rank</th>
-    <th></th> 
-    <th></th>
-    <th></th>
   </tr>
-
+<% @players = Player.find(:all, :order => "rank DESC") %>
 <% @players.each do |player| %>
   <tr>
 		<td><%= player.id %></td>
@@ -35,13 +35,9 @@
     <td><%= player.to %></td>
     <td><%= number_with_delimiter(player.pts) %></td>
 		<td><%= (player.rank*100).round / 100.0 %></td>
-    <td><%= link_to 'Show', player %></td>
-    <td><%= link_to 'Edit', edit_player_path(player) %></td>
-    <td><%= link_to 'Destroy', player, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Player', new_player_path %>
